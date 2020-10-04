@@ -1,0 +1,40 @@
+{
+"AWSDockerrunVersion": 2,
+"ContainerDefinitions": [
+  {
+    "name": "client",
+    "image": "skswami91/multi-client",
+    "hostname": "client",
+    "essential": false
+  },
+  {
+    "name":"server",
+    "image":"skswami91/multi-server",
+    "hostname":"api",
+    "essential": false
+  },
+  {
+    "name":"worker",
+    "image":"skswami91/multi-worker",
+    "hostname":"worker",
+    "essential": false
+  },
+  {
+    "name":"nginx",
+    "image":"skswami91/multi-nginx",
+    "hostname":"nginx",
+    "essential": true,
+    "portMappings": [
+       {
+         "hostPort": 80,
+         "containerPort": 80
+       }
+    ],
+    "links": [ "client", "server" ]
+
+  }
+
+
+  ]
+
+}
