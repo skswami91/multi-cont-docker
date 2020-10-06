@@ -1,6 +1,6 @@
 {
 	"AWSEBDockerrunVersion": 2,
-	"ContainerDefinitions": [{
+	"containerDefinitions": [{
 			"name": "client",
 			"image": "skswami91/multi-client",
 			"hostname": "client",
@@ -34,8 +34,5 @@
 			"links": ["client", "server"]
 
 		}
-
-
 	]
-
 }
